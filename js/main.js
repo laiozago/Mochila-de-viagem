@@ -1,26 +1,30 @@
-const form = document.querySelector("#novoItem")
-const lista = document.querySelector("#lista")
+const form = document.querySelector("#novoItem");
+const lista = document.querySelector("#lista");
 
 form.addEventListener("submit", (evento) => {
-    evento.preventDefault()
+    evento.preventDefault();
     
-    let nome = evento.target.elements['nome'].value
-    let quantidade = evento.target.elements['quantidade'].value
+    let nome = evento.target.elements['nome'].value;
+    let quantidade = evento.target.elements['quantidade'].value;
 
-    criaElemento(nome,quantidade)
+    criaElemento(nome,quantidade); //função chamando os eventos "nome ,quantidade"
 })
 
+//função cria elemento
 function criaElemento(nome, quantidade) {
-  
-    const novoItem = document.createElement("li")
-    novoItem.classList.add("item")
 
-    const numeroItem = document.createElement("strong")
-    numeroItem.innerHTML = quantidade
+    // <li class="item"><strong>7</strong>Camisa</li>
+    const novoItem = document.createElement("li");
+    novoItem.classList.add("item");
+
+    //criando novo item para Numero strong....
+    const numeroItem = document.createElement("strong");
+    numeroItem.innerHTML = quantidade;
    
-    novoItem.appendChild(numeroItem)
-    novoItem.innerHTML += nome
+    //appendChild manipulando os dados para mostrar a tela...
+    novoItem.appendChild(numeroItem); //mandando item camisa branca para html
+    novoItem.innerHTML += nome; //recebendo item da camisa branca no html
 
-    lista.appendChild(novoItem)
+    lista.appendChild(novoItem);
 
 }
